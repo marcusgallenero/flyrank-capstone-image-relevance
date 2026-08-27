@@ -25,3 +25,21 @@ with open(save_path, 'wb') as f: # Changed to 'wb' because we are writing a .jpg
                 f.write(chunk)
         return True
 ```
+
+
+## Gemini Vision Tagging
+
+**Where AI Helped:** Inital structure for calling Gemini with image input and Pydantic structured output.
+
+**Where it was Wrong:** The original version encoded the image mime type, causing errors with pngs
+
+```Python
+types.Part.from_bytes(data=image_bytes, mime_type="image/jpeg")
+```
+
+**What I Changed:** Now the mime type is detected from original file
+
+```Python
+mime_type, _ = mimetypes.guess_type(image_path)...
+types.Part.from_bytes(data=image_bytes, mime_type=mime_type)
+```
