@@ -1,0 +1,352 @@
+{
+  "bear/bear_01.jpg": {
+    "subject": "",
+    "category": "",
+    "attributes": [],
+    "caption": "",
+    "confidence": 0.0
+  },
+  "bear/bear_02.jpg": {
+    "subject": "",
+    "category": "",
+    "attributes": [],
+    "caption": "",
+    "confidence": 0.0
+  },
+  "bear/bear_03.jpg": {
+    "subject": "",
+    "category": "",
+    "attributes": [],
+    "caption": "",
+    "confidence": 0.0
+  },
+  "bear/bear_04.jpg": {
+    "subject": "",
+    "category": "",
+    "attributes": [],
+    "caption": "",
+    "confidence": 0.0
+  },
+  "bear/bear_05.jpg": {
+    "subject": "",
+    "category": "",
+    "attributes": [],
+    "caption": "",
+    "confidence": 0.0
+  },
+  "bear/bear_06.jpg": {
+    "subject": "",
+    "category": "",
+    "attributes": [],
+    "caption": "",
+    "confidence": 0.0
+  },
+  "bear/bear_07.jpg": {
+    "subject": "",
+    "category": "",
+    "attributes": [],
+    "caption": "",
+    "confidence": 0.0
+  },
+  "bear/bear_08.jpg": {
+    "subject": "",
+    "category": "",
+    "attributes": [],
+    "caption": "",
+    "confidence": 0.0
+  },
+  "bear/bear_09.jpg": {
+    "subject": "",
+    "category": "",
+    "attributes": [],
+    "caption": "",
+    "confidence": 0.0
+  },
+  "bear/bear_10.jpg": {
+    "subject": "",
+    "category": "",
+    "attributes": [],
+    "caption": "",
+    "confidence": 0.0
+  },
+  "dog/dog_01.jpg": {
+    "subject": "",
+    "category": "",
+    "attributes": [],
+    "caption": "",
+    "confidence": 0.0
+  },
+  "dog/dog_02.jpg": {
+    "subject": "",
+    "category": "",
+    "attributes": [],
+    "caption": "",
+    "confidence": 0.0
+  },
+  "dog/dog_03.jpg": {
+    "subject": "",
+    "category": "",
+    "attributes": [],
+    "caption": "",
+    "confidence": 0.0
+  },
+  "dog/dog_04.jpg": {
+    "subject": "",
+    "category": "",
+    "attributes": [],
+    "caption": "",
+    "confidence": 0.0
+  },
+  "dog/dog_05.jpg": {
+    "subject": "",
+    "category": "",
+    "attributes": [],
+    "caption": "",
+    "confidence": 0.0
+  },
+  "dog/dog_06.jpg": {
+    "subject": "",
+    "category": "",
+    "attributes": [],
+    "caption": "",
+    "confidence": 0.0
+  },
+  "dog/dog_07.jpg": {
+    "subject": "",
+    "category": "",
+    "attributes": [],
+    "caption": "",
+    "confidence": 0.0
+  },
+  "dog/dog_08.jpg": {
+    "subject": "",
+    "category": "",
+    "attributes": [],
+    "caption": "",
+    "confidence": 0.0
+  },
+  "dog/dog_09.jpg": {
+    "subject": "",
+    "category": "",
+    "attributes": [],
+    "caption": "",
+    "confidence": 0.0
+  },
+  "dog/dog_10.jpg": {
+    "subject": "",
+    "category": "",
+    "attributes": [],
+    "caption": "",
+    "confidence": 0.0
+  },
+  "moose/moose_01.jpg": {
+    "subject": "",
+    "category": "",
+    "attributes": [],
+    "caption": "",
+    "confidence": 0.0
+  },
+  "moose/moose_02.jpg": {
+    "subject": "",
+    "category": "",
+    "attributes": [],
+    "caption": "",
+    "confidence": 0.0
+  },
+  "moose/moose_03.jpg": {
+    "subject": "",
+    "category": "",
+    "attributes": [],
+    "caption": "",
+    "confidence": 0.0
+  },
+  "moose/moose_04.jpg": {
+    "subject": "",
+    "category": "",
+    "attributes": [],
+    "caption": "",
+    "confidence": 0.0
+  },
+  "moose/moose_05.jpg": {
+    "subject": "",
+    "category": "",
+    "attributes": [],
+    "caption": "",
+    "confidence": 0.0
+  },
+  "moose/moose_06.jpg": {
+    "subject": "",
+    "category": "",
+    "attributes": [],
+    "caption": "",
+    "confidence": 0.0
+  },
+  "moose/moose_07.jpg": {
+    "subject": "",
+    "category": "",
+    "attributes": [],
+    "caption": "",
+    "confidence": 0.0
+  },
+  "moose/moose_08.jpg": {
+    "subject": "",
+    "category": "",
+    "attributes": [],
+    "caption": "",
+    "confidence": 0.0
+  },
+  "moose/moose_09.jpg": {
+    "subject": "",
+    "category": "",
+    "attributes": [],
+    "caption": "",
+    "confidence": 0.0
+  },
+  "moose/moose_10.jpg": {
+    "subject": "",
+    "category": "",
+    "attributes": [],
+    "caption": "",
+    "confidence": 0.0
+  },
+  "red_fox/red_fox_01.jpg": {
+    "subject": "",
+    "category": "",
+    "attributes": [],
+    "caption": "",
+    "confidence": 0.0
+  },
+  "red_fox/red_fox_02.jpg": {
+    "subject": "",
+    "category": "",
+    "attributes": [],
+    "caption": "",
+    "confidence": 0.0
+  },
+  "red_fox/red_fox_03.jpg": {
+    "subject": "",
+    "category": "",
+    "attributes": [],
+    "caption": "",
+    "confidence": 0.0
+  },
+  "red_fox/red_fox_04.jpg": {
+    "subject": "",
+    "category": "",
+    "attributes": [],
+    "caption": "",
+    "confidence": 0.0
+  },
+  "red_fox/red_fox_05.jpg": {
+    "subject": "",
+    "category": "",
+    "attributes": [],
+    "caption": "",
+    "confidence": 0.0
+  },
+  "red_fox/red_fox_06.jpg": {
+    "subject": "",
+    "category": "",
+    "attributes": [],
+    "caption": "",
+    "confidence": 0.0
+  },
+  "red_fox/red_fox_07.jpg": {
+    "subject": "",
+    "category": "",
+    "attributes": [],
+    "caption": "",
+    "confidence": 0.0
+  },
+  "red_fox/red_fox_08.jpg": {
+    "subject": "",
+    "category": "",
+    "attributes": [],
+    "caption": "",
+    "confidence": 0.0
+  },
+  "red_fox/red_fox_09.jpg": {
+    "subject": "",
+    "category": "",
+    "attributes": [],
+    "caption": "",
+    "confidence": 0.0
+  },
+  "red_fox/red_fox_10.jpg": {
+    "subject": "",
+    "category": "",
+    "attributes": [],
+    "caption": "",
+    "confidence": 0.0
+  },
+  "wolf/wolf_01.jpg": {
+    "subject": "",
+    "category": "",
+    "attributes": [],
+    "caption": "",
+    "confidence": 0.0
+  },
+  "wolf/wolf_02.jpg": {
+    "subject": "",
+    "category": "",
+    "attributes": [],
+    "caption": "",
+    "confidence": 0.0
+  },
+  "wolf/wolf_03.jpg": {
+    "subject": "",
+    "category": "",
+    "attributes": [],
+    "caption": "",
+    "confidence": 0.0
+  },
+  "wolf/wolf_04.jpg": {
+    "subject": "",
+    "category": "",
+    "attributes": [],
+    "caption": "",
+    "confidence": 0.0
+  },
+  "wolf/wolf_05.jpg": {
+    "subject": "",
+    "category": "",
+    "attributes": [],
+    "caption": "",
+    "confidence": 0.0
+  },
+  "wolf/wolf_06.jpg": {
+    "subject": "",
+    "category": "",
+    "attributes": [],
+    "caption": "",
+    "confidence": 0.0
+  },
+  "wolf/wolf_07.jpg": {
+    "subject": "",
+    "category": "",
+    "attributes": [],
+    "caption": "",
+    "confidence": 0.0
+  },
+  "wolf/wolf_08.jpg": {
+    "subject": "",
+    "category": "",
+    "attributes": [],
+    "caption": "",
+    "confidence": 0.0
+  },
+  "wolf/wolf_09.jpg": {
+    "subject": "",
+    "category": "",
+    "attributes": [],
+    "caption": "",
+    "confidence": 0.0
+  },
+  "wolf/wolf_10.jpg": {
+    "subject": "",
+    "category": "",
+    "attributes": [],
+    "caption": "",
+    "confidence": 0.0
+  }
+}

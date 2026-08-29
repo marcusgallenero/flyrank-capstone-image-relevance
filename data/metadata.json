@@ -1,0 +1,352 @@
+{
+  "bear/bear_01.jpg": {
+    "subject": "bear",
+    "category": "mammal",
+    "attributes": ["brown", "lying down", "resting", "forest floor"],
+    "caption": "A brown bear rests on the ground near a fallen log in a forest.",
+    "confidence": 0.98
+  },
+  "bear/bear_02.jpg": {
+    "subject": "bear",
+    "category": "mammal",
+    "attributes": ["brown", "water", "swimming", "wet fur"],
+    "caption": "A brown bear wades through shallow water with wet fur.",
+    "confidence": 0.97
+  },
+  "bear/bear_03.jpg": {
+    "subject": "bear",
+    "category": "mammal",
+    "attributes": ["brown", "resting", "on a log", "claws visible"],
+    "caption": "A brown bear rests its head on a wooden log outdoors.",
+    "confidence": 0.98
+  },
+  "bear/bear_04.jpg": {
+    "subject": "bear",
+    "category": "mammal",
+    "attributes": ["brown", "standing", "near trees", "forest setting"],
+    "caption": "A brown bear stands near a tree trunk in a sparse woodland.",
+    "confidence": 0.97
+  },
+  "bear/bear_05.jpg": {
+    "subject": "bear",
+    "category": "mammal",
+    "attributes": ["brown", "walking", "profile view", "rough fur"],
+    "caption": "A brown bear walks across the dirt ground in an outdoor enclosure.",
+    "confidence": 0.98
+  },
+  "bear/bear_06.jpg": {
+    "subject": "bear",
+    "category": "mammal",
+    "attributes": ["black", "standing", "open mouth", "grassy area"],
+    "caption": "A black bear stands amidst green grass and rocks with its mouth slightly open.",
+    "confidence": 0.98
+  },
+  "bear/bear_07.jpg": {
+    "subject": "bear",
+    "category": "mammal",
+    "attributes": ["brown", "standing", "profile", "rocky background"],
+    "caption": "A brown bear stands alertly against a rocky backdrop.",
+    "confidence": 0.98
+  },
+  "bear/bear_08.jpg": {
+    "subject": "bear",
+    "category": "mammal",
+    "attributes": ["brown bears", "multiple", "rocky terrain", "mountainous"],
+    "caption": "Two brown bears navigate a rugged, rocky mountain slope.",
+    "confidence": 0.96
+  },
+  "bear/bear_09.jpg": {
+    "subject": "bear",
+    "category": "mammal",
+    "attributes": ["brown", "portrait", "sharp claws", "resting on rock"],
+    "caption": "A close-up portrait of a brown bear resting its front paws with visible claws on a rock.",
+    "confidence": 0.99
+  },
+  "bear/bear_10.jpg": {
+    "subject": "bear",
+    "category": "mammal",
+    "attributes": ["brown", "snowy", "profile view", "dark background"],
+    "caption": "A brown bear with light snow flurries on its fur looks off to the side.",
+    "confidence": 0.98
+  },
+  "dog/dog_01.jpg": {
+    "subject": "dog",
+    "category": "mammal",
+    "attributes": ["white fur", "barking", "sharp teeth", "close-up", "monochrome"],
+    "caption": "A white dog bares its teeth and barks fiercely in a close-up black and white shot.",
+    "confidence": 0.98
+  },
+  "dog/dog_02.jpg": {
+    "subject": "dog",
+    "category": "mammal",
+    "attributes": ["black and white", "running", "outdoor", "dirt ground", "monochrome"],
+    "caption": "A black and white dog runs dynamically across a dirt yard with tires in the background.",
+    "confidence": 0.97
+  },
+  "dog/dog_03.jpg": {
+    "subject": "dog",
+    "category": "mammal",
+    "attributes": ["brown", "sitting", "outdoor", "person in background", "small"],
+    "caption": "A small brown puppy sits attentively on a paved surface outdoors.",
+    "confidence": 0.98
+  },
+  "dog/dog_04.jpg": {
+    "subject": "dog",
+    "category": "mammal",
+    "attributes": ["two dogs", "yawning", "lying down", "outdoor", "collars"],
+    "caption": "Two dogs lie side by side on the ground, with one yawning widely.",
+    "confidence": 0.98
+  },
+  "dog/dog_05.jpg": {
+    "subject": "dog",
+    "category": "mammal",
+    "attributes": ["brown", "lying down", "outdoor", "ground", "monochrome"],
+    "caption": "A small brown puppy rests on a sparse, dirt-covered ground.",
+    "confidence": 0.97
+  },
+  "dog/dog_06.jpg": {
+    "subject": "dog",
+    "category": "mammal",
+    "attributes": ["light-colored", "profile view", "fluffy", "indoor", "dark background"],
+    "caption": "A fluffy light-colored dog is captured in a profile portrait indoors.",
+    "confidence": 0.98
+  },
+  "dog/dog_07.jpg": {
+    "subject": "dog",
+    "category": "mammal",
+    "attributes": ["black and white", "multiple puppies", "standing", "outdoor", "monochrome"],
+    "caption": "Several small black and white puppies stand together on an outdoor platform.",
+    "confidence": 0.98
+  },
+  "dog/dog_08.jpg": {
+    "subject": "dog",
+    "category": "mammal",
+    "attributes": ["light brown", "two puppies", "sitting", "outdoor", "natural light"],
+    "caption": "Two light brown puppies sit together outdoors in the warm sunlight.",
+    "confidence": 0.98
+  },
+  "dog/dog_09.jpg": {
+    "subject": "dog",
+    "category": "mammal",
+    "attributes": ["black and white", "standing", "green foliage", "small"],
+    "caption": "A small black, brown, and white puppy stands near green leafy plants.",
+    "confidence": 0.98
+  },
+  "dog/dog_10.jpg": {
+    "subject": "dog",
+    "category": "mammal",
+    "attributes": ["light brown", "two puppies", "playing", "ground"],
+    "caption": "Two young puppies play together playfully on the dirt ground.",
+    "confidence": 0.98
+  },
+  "moose/moose_01.jpg": {
+    "subject": "moose",
+    "category": "mammal",
+    "attributes": ["large antlers", "brown fur", "lying down", "grassy field"],
+    "caption": "A large bull moose with prominent antlers rests in a grassy field.",
+    "confidence": 0.98
+  },
+  "moose/moose_02.jpg": {
+    "subject": "moose",
+    "category": "mammal",
+    "attributes": ["brown fur", "lying down", "profile view", "grass"],
+    "caption": "A moose rests on the grass with its head turned to the side.",
+    "confidence": 0.97
+  },
+  "moose/moose_03.jpg": {
+    "subject": "moose",
+    "category": "mammal",
+    "attributes": ["eating", "branches", "snow background", "profile"],
+    "caption": "A moose reaches up to nibble on bare branches against a snowy backdrop.",
+    "confidence": 0.98
+  },
+  "moose/moose_04.jpg": {
+    "subject": "moose",
+    "category": "mammal",
+    "attributes": ["antlers", "standing", "green grass", "daytime"],
+    "caption": "A bull moose with wide antlers stands in a lush green meadow.",
+    "confidence": 0.98
+  },
+  "moose/moose_05.jpg": {
+    "subject": "moose",
+    "category": "mammal",
+    "attributes": ["standing", "forest", "behind tree", "woodland"],
+    "caption": "A moose stands partially obscured by a tree trunk in a forested area.",
+    "confidence": 0.97
+  },
+  "moose/moose_06.jpg": {
+    "subject": "moose",
+    "category": "mammal",
+    "attributes": ["young", "standing", "tall grass", "outdoor"],
+    "caption": "A young moose stands alertly in a field of tall grass.",
+    "confidence": 0.97
+  },
+  "moose/moose_07.jpg": {
+    "subject": "moose",
+    "category": "mammal",
+    "attributes": ["small antlers", "resting", "autumn leaves", "ground"],
+    "caption": "A young bull moose with small antlers rests on a bed of dry autumn leaves.",
+    "confidence": 0.98
+  },
+  "moose/moose_08.jpg": {
+    "subject": "moose",
+    "category": "mammal",
+    "attributes": ["eating", "leaves", "close-up", "open mouth"],
+    "caption": "A close-up shot of a moose chewing on green foliage.",
+    "confidence": 0.98
+  },
+  "moose/moose_09.jpg": {
+    "subject": "moose",
+    "category": "mammal",
+    "attributes": ["standing", "snow", "bare trees", "winter"],
+    "caption": "A moose stands near slender bare trees with snow on the ground.",
+    "confidence": 0.98
+  },
+  "moose/moose_10.jpg": {
+    "subject": "moose",
+    "category": "mammal",
+    "attributes": ["close-up", "profile view", "reaching up", "branches"],
+    "caption": "A close-up profile view of a moose reaching up towards a twig.",
+    "confidence": 0.98
+  },
+  "red_fox/red_fox_01.jpg": {
+    "subject": "red fox",
+    "category": "mammal",
+    "attributes": ["red fur", "curled up", "resting", "tall grass"],
+    "caption": "A red fox curls up and rests in a patch of tall green grass.",
+    "confidence": 0.98
+  },
+  "red_fox/red_fox_02.jpg": {
+    "subject": "red fox",
+    "category": "mammal",
+    "attributes": ["red fur", "lying down", "grassy field", "daytime"],
+    "caption": "A red fox lies relaxed in a grassy field during the day.",
+    "confidence": 0.98
+  },
+  "red_fox/red_fox_03.jpg": {
+    "subject": "red fox",
+    "category": "mammal",
+    "attributes": ["red fur", "sitting", "bush background", "alert"],
+    "caption": "A red fox sits alertly in a grassy clearing near some bushes.",
+    "confidence": 0.98
+  },
+  "red_fox/red_fox_04.jpg": {
+    "subject": "red fox",
+    "category": "mammal",
+    "attributes": ["red fur", "portrait", "close-up", "sharp gaze"],
+    "caption": "A close-up portrait of a red fox looking directly at the camera.",
+    "confidence": 0.99
+  },
+  "red_fox/red_fox_05.jpg": {
+    "subject": "red fox",
+    "category": "mammal",
+    "attributes": ["red fur", "resting", "snow patches", "rocky ground"],
+    "caption": "A red fox rests on rocky ground dusted with patches of snow.",
+    "confidence": 0.98
+  },
+  "red_fox/red_fox_06.jpg": {
+    "subject": "red fox",
+    "category": "mammal",
+    "attributes": ["red fur", "sitting", "wooden steps", "forest background"],
+    "caption": "A red fox sits upright on wooden steps with a forest background.",
+    "confidence": 0.97
+  },
+  "red_fox/red_fox_07.jpg": {
+    "subject": "red fox",
+    "category": "mammal",
+    "attributes": ["red fur", "standing", "chain-link fence", "outdoor"],
+    "caption": "A red fox stands near a chain-link fence outdoors.",
+    "confidence": 0.97
+  },
+  "red_fox/red_fox_08.jpg": {
+    "subject": "red fox",
+    "category": "mammal",
+    "attributes": ["red fur", "close-up", "straw bed", "resting head"],
+    "caption": "A close-up of a red fox resting its head comfortably on a bed of straw.",
+    "confidence": 0.99
+  },
+  "red_fox/red_fox_09.jpg": {
+    "subject": "red fox",
+    "category": "mammal",
+    "attributes": ["two foxes", "red fur", "resting", "grassy field"],
+    "caption": "Two red foxes rest peacefully together in a green grassy field.",
+    "confidence": 0.98
+  },
+  "red_fox/red_fox_10.jpg": {
+    "subject": "red fox",
+    "category": "mammal",
+    "attributes": ["two foxes", "red fur", "lying down", "meadow"],
+    "caption": "Two red foxes lie in a meadow, with one looking forward and the other resting.",
+    "confidence": 0.98
+  },
+  "wolf/wolf_01.jpg": {
+    "subject": "wolf",
+    "category": "mammal",
+    "attributes": ["gray fur", "alert", "close-up", "outdoor"],
+    "caption": "A gray wolf looks intently toward the side in a close-up shot.",
+    "confidence": 0.98
+  },
+  "wolf/wolf_02.jpg": {
+    "subject": "wolf",
+    "category": "mammal",
+    "attributes": ["gray fur", "standing", "mouth open", "roots background"],
+    "caption": "A gray wolf stands near exposed tree roots with its mouth slightly open.",
+    "confidence": 0.97
+  },
+  "wolf/wolf_03.jpg": {
+    "subject": "wolf",
+    "category": "mammal",
+    "attributes": ["gray fur", "standing", "grassy field", "daytime"],
+    "caption": "A gray wolf stands alert in a green grassy field.",
+    "confidence": 0.98
+  },
+  "wolf/wolf_04.jpg": {
+    "subject": "wolf",
+    "category": "mammal",
+    "attributes": ["black fur", "lying down", "stone slab", "forest background"],
+    "caption": "A black wolf rests comfortably on a large stone slab in a wooded area.",
+    "confidence": 0.98
+  },
+  "wolf/wolf_05.jpg": {
+    "subject": "wolf",
+    "category": "mammal",
+    "attributes": ["brown and gray", "profile view", "showing teeth", "blurred background"],
+    "caption": "A profile view of a wolf with its mouth open showing teeth against a blurred backdrop.",
+    "confidence": 0.98
+  },
+  "wolf/wolf_06.jpg": {
+    "subject": "wolf",
+    "category": "mammal",
+    "attributes": ["gray fur", "standing", "green background", "alert expression"],
+    "caption": "A gray wolf stands outdoors with a soft green background.",
+    "confidence": 0.98
+  },
+  "wolf/wolf_07.jpg": {
+    "subject": "wolf",
+    "category": "mammal",
+    "attributes": ["brown and gray", "walking", "dirt ground", "daytime"],
+    "caption": "A wolf walks across a dirt path outdoors during the day.",
+    "confidence": 0.97
+  },
+  "wolf/wolf_08.jpg": {
+    "subject": "wolf",
+    "category": "mammal",
+    "attributes": ["gray and white", "standing", "tall grass", "tongue out"],
+    "caption": "A gray and white wolf stands amidst tall grass with its tongue playfully out.",
+    "confidence": 0.97
+  },
+  "wolf/wolf_09.jpg": {
+    "subject": "wolf",
+    "category": "mammal",
+    "attributes": ["dark fur", "sitting", "indoor or dim lighting", "looking up"],
+    "caption": "A dark-furred wolf sits indoors looking upward in subdued lighting.",
+    "confidence": 0.96
+  },
+  "wolf/wolf_10.jpg": {
+    "subject": "wolf",
+    "category": "mammal",
+    "attributes": ["gray fur", "portrait", "amber eyes", "orange background"],
+    "caption": "A sharp portrait of a gray wolf with striking amber eyes against an orange backdrop.",
+    "confidence": 0.99
+  }
+}
