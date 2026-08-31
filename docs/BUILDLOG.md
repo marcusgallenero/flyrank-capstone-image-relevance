@@ -49,4 +49,12 @@ types.Part.from_bytes(data=image_bytes, mime_type=mime_type)
 
 **Where it Was Wrong:** Said that we ran into errors because of surpassing the 15 requests per minute allowed by Gemini 3.5-flash-lite.
 
-**What I Changed:** Generated 50 images' metadata manually via Gemini Chat, storing that metadata in `app/metadata.json`,
+**What I Changed:** Generated 50 images' metadata manually via Gemini Chat, storing that metadata in `app/metadata.json`
+
+## Gemini Embeddings
+
+**Where AI Helped:** Provide general logic of how to use gemini embeddings library
+
+**Where it was Wrong:** Ran into 429: Resource Exhausted (Basically means Free tier insufficient)
+
+**What I changed:**  Pivot to a local version: `sentence-transformers`
