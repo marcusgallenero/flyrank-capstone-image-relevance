@@ -58,3 +58,18 @@ types.Part.from_bytes(data=image_bytes, mime_type=mime_type)
 **Where it was Wrong:** Ran into 429: Resource Exhausted (Basically means Free tier insufficient)
 
 **What I changed:**  Pivot to a local version: `sentence-transformers`
+
+## Local Embedding 
+
+**Where AI Helped:** Diagnosed a `PermissionError` when `sentence-transformers` tried to download it's model file inside the Docker container
+
+**Where it was Wrong:** The Dockerfile's non-root `appuser` is created with `--home "/nonexistent"` as a security hardening measure. `sentence-transformers` defaults to caching its downloaded model under the user's home directory (`~/.cache/huggingface`), which resolved to `/nonexistent/.cache/` which does not exist.
+
+**What I changed:** Add a cache directory before switching to the non-root user:
+
+```Dockerfile
+ENV HF_HOME=/app/.cache/huggingface
+RUN mkdir -p /app/.cache/huggingface && chown -R appuser:appuser /app/.cache
+```
+
+Also added a HF_TOKEN in `.env` to speed up model download speed
