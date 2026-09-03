@@ -53,11 +53,21 @@ types.Part.from_bytes(data=image_bytes, mime_type=mime_type)
 
 ## Gemini Embeddings
 
-**Where AI Helped:** Provide general logic of how to use gemini embeddings library
 
-**Where it was Wrong:** Ran into 429: Resource Exhausted (Basically means Free tier insufficient)
-
-**What I changed:**  Pivot to a local version: `sentence-transformers`
+```json
+{
+  "post_id": 8,
+  "result": "no confident match",
+  "reason": "Image content isn't similar enough to the post",
+  "top_candidate": {
+    "image_id": 34,
+    "file_path": "data/images/red_fox/red_fox_04.jpg",
+    "caption": "A close-up portrait of a red fox looking directly at the camera.",
+    "subject": "red fox",
+    "confidence": 0.99,
+    "similarity": 0.47109292584964546
+  }
+```
 
 ## Local Embedding
 
@@ -74,7 +84,7 @@ RUN mkdir -p /app/.cache/huggingface && chown -R appuser:appuser /app/.cache
 
 Also added a HF_TOKEN in `.env` to speed up model download speed
 
-## Similarity Ranking & Mismatch Guard 
+## Similarity Ranking & Mismatch Guard
 
 **Where AI Helped:** Structured the `/posts/{post_id}/suggestions` endpoint by joining post/image embeddings via SQL and applying mismatch guard
 
@@ -90,3 +100,22 @@ for candidate in scored:
 ```
 
 **What I changed:** Fix syntax errors; for this particular case, replace `reason` with `_` for readability
+
+## Images/Posts Endpoints
+
+**Where AI Helped:** Structured POST/GET endpoints for `/images` and `/posts`
+
+**Where it Was Wrong:** Multiple syntax errors, for example: 
+
+```PostgreSQL
+INSERT INTO images (subject, category, attributes, caption, confidence, file_path)
+VALUES (%s)
+```
+
+**What I Changed:** Fix syntax error, for this example: 
+
+```PostgreSQL
+INSERT INTO images (subject, category, attributes, caption, confidence, file_path)
+VALUES (%s, %s, %s, %s, %s, %s)
+RETURNING id
+```
