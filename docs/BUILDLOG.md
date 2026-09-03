@@ -59,7 +59,7 @@ types.Part.from_bytes(data=image_bytes, mime_type=mime_type)
 
 **What I changed:**  Pivot to a local version: `sentence-transformers`
 
-## Local Embedding 
+## Local Embedding
 
 **Where AI Helped:** Diagnosed a `PermissionError` when `sentence-transformers` tried to download it's model file inside the Docker container
 
@@ -73,3 +73,20 @@ RUN mkdir -p /app/.cache/huggingface && chown -R appuser:appuser /app/.cache
 ```
 
 Also added a HF_TOKEN in `.env` to speed up model download speed
+
+## Similarity Ranking & Mismatch Guard 
+
+**Where AI Helped:** Structured the `/posts/{post_id}/suggestions` endpoint by joining post/image embeddings via SQL and applying mismatch guard
+
+**Where it was Wrong:** Multiple syntax errors in code, for example: capturing `reason` inside ranking loop but never used it:
+
+```Python
+for candidate in scored:
+	passed, reason = check_mismatch_guard(
+    	candidate, post_subject, candidate["similarity"]
+    )
+    if passed:
+    	return {"post_id": post_id, "result": "match", "suggestion": candidate}
+```
+
+**What I changed:** Fix syntax errors; for this particular case, replace `reason` with `_` for readability

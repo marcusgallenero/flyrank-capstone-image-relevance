@@ -3,6 +3,7 @@ from fastapi import FastAPI, Depends, HTTPException
 from psycopg import AsyncConnection
 from app.db import pool, get_connection
 from app.cosine_similarity import cosine_similarity
+from app.guard import check_mismatch_guard
 
 
 @asynccontextmanager
@@ -35,17 +36,22 @@ async def get_suggestions(
 ):
     async with conn.cursor() as cur:
         await cur.execute(
-            "SELECT vector FROM post_embeddings WHERE post_id = %s", (post_id,)
+            """
+            SELECT vector, subject 
+            FROM post_embeddings pe 
+            JOIN posts p ON p.id = pe.post_id WHERE pe.post_id = %s
+            """,
+            (post_id,),
         )
         row = await cur.fetchone()
         if row is None:
             raise HTTPException(
                 status_code=404, detail="Post not found or not embedded"
             )
-        post_vector = row[0]
+        post_vector, post_subject = row
 
         await cur.execute("""
-            SELECT i.id, i.file_path, i.caption, ie.vector
+            SELECT i.id, i.file_path, i.caption, i.subject, i.confidence, ie.vector
             FROM image_embeddings ie
             JOIN images i ON i.id = ie.image_id
             """)
@@ -56,10 +62,28 @@ async def get_suggestions(
             "image_id": r[0],
             "file_path": r[1],
             "caption": r[2],
-            "similarity": cosine_similarity(post_vector, r[3]),
+            "subject": r[3],
+            "confidence": r[4],
+            "similarity": cosine_similarity(post_vector, r[5]),
         }
         for r in rows
     ]
-    scored.sort(key=lambda x: x['similarity'], reverse=True)
+    scored.sort(key=lambda x: x["similarity"], reverse=True)
 
-    return {"post_id": post_id, "suggestions": scored[:5]}
+    # Walk ranked candidates until one clears guard
+    for candidate in scored:
+        passed, _ = check_mismatch_guard(
+            candidate, post_subject, candidate["similarity"]
+        )
+        if passed:
+            return {"post_id": post_id, "result": "match", "suggestion": candidate}
+
+    # Nothing passed, report via top ranked candidates failure reason
+    top = scored[0]
+    _, top_reason = check_mismatch_guard(top, post_subject, top["similarity"])
+    return {
+        "post_id": post_id,
+        "result": "no confident match",
+        "reason": top_reason,
+        "top_candidate": top,
+    }
