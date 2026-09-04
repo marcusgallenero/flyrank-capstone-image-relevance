@@ -44,7 +44,7 @@ create table suggestions (
 
 create table review_decisions (
   id SERIAL PRIMARY KEY,
-  suggestion_id INT REFERENCES suggestions(id),
+  suggestion_id INT REFERENCES suggestions(id) UNIQUE,
   decision TEXT NOT NULL CHECK (decision IN ('approved', 'rejected')),
   reviewed_at TIMESTAMP DEFAULT now()
 );

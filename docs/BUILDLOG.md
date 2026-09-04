@@ -53,7 +53,6 @@ types.Part.from_bytes(data=image_bytes, mime_type=mime_type)
 
 ## Gemini Embeddings
 
-
 ```json
 {
   "post_id": 8,
@@ -105,17 +104,25 @@ for candidate in scored:
 
 **Where AI Helped:** Structured POST/GET endpoints for `/images` and `/posts`
 
-**Where it Was Wrong:** Multiple syntax errors, for example: 
+**Where it Was Wrong:** Multiple syntax errors, for example:
 
 ```PostgreSQL
 INSERT INTO images (subject, category, attributes, caption, confidence, file_path)
 VALUES (%s)
 ```
 
-**What I Changed:** Fix syntax error, for this example: 
+**What I Changed:** Fix syntax error, for this example:
 
 ```PostgreSQL
 INSERT INTO images (subject, category, attributes, caption, confidence, file_path)
 VALUES (%s, %s, %s, %s, %s, %s)
 RETURNING id
 ```
+
+## Review Endpoints
+
+**Where AI Helped:** Structured GET /suggestions/{id} and POST /suggestions/{id}/review, including the one-review-per-suggestion design using a UNIQUE constraint + 409 response.
+
+**Where it was Wrong:** Updating `db/schema.sql` alone doesn't affect an already-running database, so I had to manually run `ALTER TABLE` against the live container to add the UNIQUE constraint, and clean up a duplicate row created before the constraint existed.
+
+**What I changed:** Ran the ALTER TABLE migration directly via psql, verified with `\d review_decisions`, and confirmed the 409 path works on a real duplicate request.
