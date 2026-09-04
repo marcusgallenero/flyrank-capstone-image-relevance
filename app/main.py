@@ -169,33 +169,58 @@ async def get_suggestions(
             """)
         rows = await cur.fetchall()
 
-    scored = [
-        {
-            "image_id": r[0],
-            "file_path": r[1],
-            "caption": r[2],
-            "subject": r[3],
-            "confidence": r[4],
-            "similarity": cosine_similarity(post_vector, r[5]),
-        }
-        for r in rows
-    ]
-    scored.sort(key=lambda x: x["similarity"], reverse=True)
+        scored = [
+            {
+                "image_id": r[0],
+                "file_path": r[1],
+                "caption": r[2],
+                "subject": r[3],
+                "confidence": r[4],
+                "similarity": cosine_similarity(post_vector, r[5]),
+            }
+            for r in rows
+        ]
+        scored.sort(key=lambda x: x["similarity"], reverse=True)
 
-    # Walk ranked candidates until one clears guard
-    for candidate in scored:
-        passed, _ = check_mismatch_guard(
-            candidate, post_subject, candidate["similarity"]
+        # Run guard on each candidate and persist result for each
+        guard_results = []
+        for candidate in scored:
+            passed, reason = check_mismatch_guard(
+                candidate, post_subject, candidate["similarity"]
+            )
+            guard_results.append((candidate, passed, reason))
+
+        await cur.executemany(
+            """
+            INSERT INTO suggestions (post_id, image_id, similarity_score, guard_passed, rejection_reason)
+            VALUES (%s, %s, %s, %s, %s)
+            ON CONFLICT (post_id, image_id)
+            DO UPDATE SET
+                similarity_score = EXCLUDED.similarity_score,
+                guard_passed = EXCLUDED.guard_passed,
+                rejection_reason = EXCLUDED.rejection_reason
+            """,
+            [
+                (
+                    post_id,
+                    candidate["image_id"],
+                    candidate["similarity"],
+                    passed,
+                    reason,
+                )
+                for candidate, passed, reason in guard_results
+            ],
         )
+
+    for candidate, passed, _ in guard_results:
         if passed:
             return {"post_id": post_id, "result": "match", "suggestion": candidate}
 
-    # Nothing passed, report via top ranked candidates failure reason
-    top = scored[0]
-    _, top_reason = check_mismatch_guard(top, post_subject, top["similarity"])
+    # Nothing passed, report top candidate's failure reason
+    top_candidate, _, top_reason = guard_results[0]
     return {
         "post_id": post_id,
         "result": "no confident match",
         "reason": top_reason,
-        "top_candidate": top,
+        "top_candidate": top_candidate
     }
