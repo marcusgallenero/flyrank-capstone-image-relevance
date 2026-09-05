@@ -126,3 +126,11 @@ RETURNING id
 **Where it was Wrong:** Updating `db/schema.sql` alone doesn't affect an already-running database, so I had to manually run `ALTER TABLE` against the live container to add the UNIQUE constraint, and clean up a duplicate row created before the constraint existed.
 
 **What I changed:** Ran the ALTER TABLE migration directly via psql, verified with `\d review_decisions`, and confirmed the 409 path works on a real duplicate request.
+
+## Automated Tests
+
+**Where AI Helped:** Structure and revision of `tests/test_schemas.py`,`tests/test_guard.py` and `tests/test_cosine_similarity.py`.
+
+**Where it was Wrong:** Duplicated tests and incorrect terminal command to run test scripts: '`docker compose exec server pytest tests/ -v`.'
+
+**What I changed:** Final revision of tests to clean up duplicates and possible holes, and fix terminal command: '`docker compose exec server python -m pytest tests/ -v`.'
