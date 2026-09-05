@@ -1,4 +1,3 @@
-import time
 from pathlib import Path
 from app.load_metadata import load_metadata
 
@@ -26,7 +25,7 @@ def tag_dataset():
         if not tagged_image:
             failures.append(image_path)
         else:
-            results.append(image_path, tagged_image)
+            results.append((image_path, tagged_image))
     return results, failures 
 
 if __name__ == "__main__":
