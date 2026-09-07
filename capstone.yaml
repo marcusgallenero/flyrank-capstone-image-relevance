@@ -1,0 +1,53 @@
+run: docker compose up --build
+seed: |
+  docker compose exec server python -m scripts.init_db
+  docker compose exec server python -m scripts.seed_images
+  docker compose exec server python -m scripts.seed_posts
+test: docker compose exec server python -m pytest tests/ -v
+base_url: http://localhost:8000
+
+endpoints:
+  - method: GET
+    path: /health
+    description: Basic health check
+
+  - method: GET
+    path: /images
+    description: List all images
+
+  - method: GET
+    path: /posts
+    description: List all posts
+
+  - method: GET
+    path: /posts/{post_id}/suggestions
+    description: >
+      Probe 2, 3, 4 - Returns top-ranked image suggestion for a post,
+      or 'no confident match' with a reason if mismatch guard rejects
+      every candidate. Try post_id=3 (red_fox) for match, and post_id=7
+      (ludwid_ahgren) for a guard rejection.
+
+  - method: GET
+    path: /suggestions/{suggestion_id}
+    description: Inspect a suggestion and its guard result
+
+  - method: POST
+    path: /suggestions/{suggestion_id}/review
+    description: >
+      Approve or reject a suggestion. Body: {"decision": "approved"} or
+      {"decision": "rejected"}. Returns 404 if the suggestion doesn't exist,
+      409 if it's already been reviewed.
+
+evaluation: 
+  script: docker compose exec server python -m scripts.evaluate
+  description: Computes top-1 prediction against data/eval_labels.json (probe 5)
+
+notes:
+  probe_1_batch_job: >
+    Batch tagging (in batch.py) looks up pre-generated metadata (data/metadata.json)
+    rather than making live Gemini calls due to billing limitations with Gemini's Free Tier.
+    Low-confidence flagging is demonstrated on real corpus data via image_id=2's manually lowered
+    confidence. See GET /suggestions/3 and EVIDENCE.md
+  probe_6_cost_tracking: >
+    Cost tracking logic exists in app/vision.py (_log_cost) but is unverified against
+    live Gemini calls due to the same billing error.   

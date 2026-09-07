@@ -4,11 +4,88 @@ AI Image Understanding & Content Matching Engine. Tags images with a vision mode
 
 ## Architecture
 
-`TODO: Architecture Diagram`
+```mermaid
+flowchart TD
+    subgraph Offline["Offline Data Prep (manual, one-time)"]
+        A[Pexels API] --> B[data/images/]
+        B --> C[Gemini Chat\nmanual tagging]
+        C --> D[data/metadata.json]
+    end
+
+    subgraph Seed["Seeding Scripts (run once)"]
+        D --> E[seed_images.py]
+        F[data/posts.json] --> G[seed_posts.py]
+        E --> H[embeddings_local.py]
+        G --> H
+    end
+
+    subgraph DB["PostgreSQL (Docker: db)"]
+        H --> I[(images)]
+        H --> J[(image_embeddings)]
+        H --> K[(posts)]
+        H --> L[(post_embeddings)]
+        M[(suggestions)]
+        N[(review_decisions)]
+    end
+
+    subgraph API["FastAPI App (Docker: server)"]
+        O[POST/GET images, posts] --> H
+        P["GET /posts/id/suggestions"] --> Q[cosine_similarity.py]
+        Q --> R[guard.py\nmismatch check]
+        R -->|every candidate: pass or fail| M
+        S["POST /suggestions/id/review"] --> N
+    end
+
+    Client[Swagger UI / API Client] --> O
+    Client --> P
+    Client --> S
+
+    X[Gemini Vision + Embeddings\napp/vision.py, app/embeddings.py] -.blocked: billing issue.-> H
+```
 
 ## Setup
 
-`TODO: Run steps `
+1. **Clone repo and create .env file:**
+
+```
+cp .env.example .env
+```
+
+Make sure to fill in `DATABASE_URL`, `POSTGRES_PASSWORD`, `HF_TOKEN` (not necessary, although *GREATLY* recommended. `PEXELS_API_KEY` and `GEMINI_API_KEY` are only required if you want to rerun fetch_dataset, or vision/embedding pipeline against live APIs.
+
+2. **Build and start containers:**
+
+```
+docker compose up --build
+```
+
+This starts postgres and fastAPI server. Wait for `Uvicorn running on http://0.0.0.0:8000` in logs
+
+3. **Initialize database Schema**
+
+```
+docker compose exec server python -m scripts.init_db
+```
+
+4. **Seed images and posts with embeddings**
+
+```
+docker compose exec server python -m scripts.seed_images
+docker compose exec server python -m scripts.seed_posts
+```
+
+5. **Open Swagger UI to try API:** Run `http://localhost:8000/docs` in a browser
+6. **Run automated tests:**
+
+```
+docker compose exec server python -m pytest tests/ -v
+```
+
+7. **Run evaluation script:**
+
+```
+docker compose exec server python -m scripts.evaluate
+```
 
 ## Evaluation
 

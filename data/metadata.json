@@ -11,7 +11,7 @@
     "category": "mammal",
     "attributes": ["brown", "water", "swimming", "wet fur"],
     "caption": "A brown bear wades through shallow water with wet fur.",
-    "confidence": 0.97
+    "confidence": 0.75
   },
   "bear/bear_03.jpg": {
     "subject": "bear",
